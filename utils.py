@@ -48,4 +48,5 @@ def display_result(user_text: str, converted_text: str, platform: str) -> None:
         )
     
     if st.button("클립보드에 복사 📋", use_container_width=True):
-        st.toast("텍스트가 클립보드에 복사되었습니다! ✨") 
+        st.write(f'<script>navigator.clipboard.writeText("{converted_text}");</script>', unsafe_allow_html=True)
+        st.toast("텍스트가 클립보드에 복사되었습니다! ✨")
